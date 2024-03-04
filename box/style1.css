@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b4b1b1;
+}
+.menu, .menu2{
+    height: 300px;
+    width: 300px;
+    transform-style: preserve-3d;
+    perspective: 1600px;
+    perspective-origin: center -700px;
+}
+.items{
+    height: 50px;
+    width: 200px;
+    position: relative;
+    transition: .5s;
+    transform-style: preserve-3d;
+    transform: rotateY(45deg) rotateX(0);
+    /* transform: rotateY(45deg) rotateX(0); */
+}
+.items:hover:not(.menu2 .items){
+    transform:  rotateY(45deg) translateZ(50px);
+}
+.items div{
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    background: #4e4e4e;
+    color: #ddd;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    /* border: 1px solid #989696; */
+    transition: .5s;
+}
+.items:hover div{
+    color: #fff;
+    background: var(--clr);
+}
+.items .icon{
+    height: 50px;
+    width: 50px;
+}
+.items .top{
+    transform: rotateX(90deg) translateZ(25px);
+}
+.items .front{
+    transform: translateZ(25px);
+}
+.items .left{
+    transform: rotateY(-90deg) translateZ(25px);
+}
+.items div span{
+    font-size: 1.5rem;
+    text-align: center;
+}
+/* second menu design */
+.menu2{
+    display: flex;
+}
+.menu2 .items{
+    position: absolute;
+    transform:  rotateY(45deg) translateZ(calc(50px * var(--i)));
+}
+.menu2 .items:hover{
+    transform:  rotateY(45deg) translateZ(calc(50px * var(--i))) translateY(-50px);
+    color: #fff;
+    background: var(--clr);
+}
+.menu2 .items{}
